@@ -5,6 +5,7 @@ import Card from './Card'
 const api_key = 'DEMO_KEY'
 const URL = `https://api.nasa.gov/planetary/apod?api_key=${api_key}`
 
+
 function App() {
   const [apod, setApod] = useState()
 
@@ -19,28 +20,28 @@ function App() {
         console.log(err.message)
       })
     }
-    //fetchPhoto()
+    // fetchPhoto()
     setApod({
-      "date": "2024-10-17",
-      "explanation": "NASA's Europa Clipper is now headed toward an ocean world beyond Earth. The large spacecraft is tucked into the payload fairing atop the Falcon Heavy rocket in this photo, taken at Kennedy Space Center the day before the mission's successful October 14 launch. Europa Clipper's interplanetary voyage will first take it to Mars, then back to Earth, and then on to Jupiter on gravity assist trajectories that will allow it to enter orbit around Jupiter in April 2030. Once orbiting Jupiter, the spacecr...",
-      "hdurl": "https://apod.nasa.gov/apod/image/2410/EuropaComet_cooper3.jpg",
+      "date": "2024-10-20",
+      "explanation": "Is our universe haunted?  It might look that way on this dark matter map.  The gravity of unseen dark matter is the leading explanation for why galaxies rotate so fast, why galaxies orbit clusters so fast, why gravitational lenses so strongly deflect light, and why visible matter is distributed as it is both in the local universe and on the cosmic microwave background.  The featured image from the American Museum of Natural History's Hayden Planetarium Space Show Dark Universe highlights one exa...",
+      "hdurl": "https://apod.nasa.gov/apod/image/2410/DarkMatter_KipacAmnh_1200.jpg",
       "media_type": "image",
       "service_version": "v1",
-      "title": "The Clipper and the Comet",
-      "url": "https://apod.nasa.gov/apod/image/2410/EuropaComet_cooper3.jpg"
+      "title": "Dark Matter in a Simulated Universe",
+      "url": "https://apod.nasa.gov/apod/image/2410/DarkMatter_KipacAmnh_960.jpg"
     })
   }, [])
 
   if (!apod) return 'Fetching Photo of the Day...'
- return (
-   <section>
-    <Card
+  return (
+    <section>
+      <Card
       title={apod.title}
       text={apod.explanation}
       imageURL={apod.url}
       date={apod.date}
       />
-   </section>
+    </section>
   )
 }
 
